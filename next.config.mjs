@@ -1,20 +1,9 @@
-/** @type {import('next').NextConfig} */
+/** @type {import('next').Metadata} */
 const nextConfig = {
-  // Mengaktifkan fitur React Strict Mode untuk coding yang lebih bersih
-  reactStrictMode: true,
-
-  // Izinkan Next.js menampilkan gambar dari domain eksternal
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**.google.com', // Mengizinkan gambar dari server Google
-      },
-      {
-        protocol: 'data', // Mengizinkan gambar dalam format Base64 (inlineData)
-        hostname: '*',
-      },
-    ],
+    // Kita hapus remotePatterns karena Gemini mengirim gambar dalam format Base64
+    // format Base64 (data:image/...) diizinkan secara default oleh Next.js
+    unoptimized: true, 
   },
 };
 
